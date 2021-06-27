@@ -4,3 +4,5 @@
 - name: congifurar hora
   timezone:
     name: Europe/Madrid
+  become: yes
+  become_method: sudo
