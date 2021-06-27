@@ -1,0 +1,10 @@
+---
+- name: instalar Chrony
+  dfn:
+	name: chrony
+
+- name: activar chrony
+  systemd:
+	name: chrony
+	enabled: yes
+	state: started

@@ -1,0 +1,4 @@
+---
+
+- include_tasks: configurarhora.yaml
+- include_tasks: instalarChrony.yaml

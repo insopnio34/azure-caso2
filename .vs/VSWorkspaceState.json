@@ -2,8 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\ansible",
-    "\\terraform"
+    "\\ansible\\roles",
+    "\\ansible\\roles\\1_sincronizacion_horaria",
+    "\\ansible\\roles\\2_desinstalar_SELinux",
+    "\\ansible\\roles\\2_desinstalar_SELinux\\tasks",
+    "\\ansible\\roles\\3_instalar_nfs_utils",
+    "\\ansible\\roles\\3_instalar_nfs_utils\\tasks",
+    "\\ansible\\roles\\b4_instalar_ingres_controller\\tasks",
+    "\\ansible\\roles\\b5_crear_usuario_admin_cluster\\tasks"
   ],
-  "SelectedNode": "\\ansible",
+  "SelectedNode": "\\ansible\\roles\\1_sincronizacion_horaria\\tasks\\instalarChrony.yaml",
   "PreviewInSolutionExplorer": false
 }

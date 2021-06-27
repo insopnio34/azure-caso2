@@ -1,0 +1,4 @@
+---
+- name: congifurar hora
+  timezone:
+	name: Europe/Madrid
