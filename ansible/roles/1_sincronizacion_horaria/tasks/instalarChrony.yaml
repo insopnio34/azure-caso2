@@ -4,6 +4,8 @@
 - name: instalar Chrony
   dnf:
     name: chrony
+  become: yes
+  become_method: sudo
 
 # activamos el Chrony
 - name: activar chrony
@@ -11,3 +13,5 @@
     name: chrony
     enabled: yes
     state: started
+  become: yes
+  become_method: sudo
