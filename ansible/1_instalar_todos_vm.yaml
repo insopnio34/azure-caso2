@@ -1,5 +1,5 @@
 ---
-
+#configuraciones iniciales horaria y activacion chrony
 - name: configurar maquinas
   hosts: all
   gather_facts: false
