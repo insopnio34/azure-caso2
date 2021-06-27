@@ -1,7 +1,9 @@
 ---
-#configuraciones iniciales horaria y activacion chrony
+#configuraciones iniciales horaria, activacion chrony, desintalar selinux y instalar nfs utiles
 - name: configurar maquinas
   hosts: all
   gather_facts: false
   roles:
     - 1_sincronizacion_horaria
+    - 2_desinstalar_SELinux
+    - 3_instalar_nfs_utils
