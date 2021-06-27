@@ -1,10 +1,12 @@
 ---
+
+# instalamos el Chrony
 - name: instalar Chrony
   dfn:
-	name: chrony
+    name: chrony
 
 - name: activar chrony
   systemd:
-	name: chrony
-	enabled: yes
-	state: started
+    name: chrony
+    enabled: yes
+    state: started
