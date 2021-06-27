@@ -1,0 +1,23 @@
+---
+
+# instalamos nfs-utils
+- name: instalar nfs-utils
+  dnf:
+    name: nfs-utils
+  become: yes
+  become_method: sudo
+
+# instalamos nfs4-acl-tools
+- name: instalar nfs4-acl-tools
+  dnf:
+    name: nfs4-acl-tools
+  become: yes
+  become_method: sudo
+
+# instalamos wget
+- name: instalar wget
+  dnf:
+    name: wget
+  become: yes
+  become_method: sudo
+
