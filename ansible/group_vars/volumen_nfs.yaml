@@ -1,0 +1,4 @@
+---
+
+rutavolumen: /dev/sdb
+nombrevolumen: data_vg

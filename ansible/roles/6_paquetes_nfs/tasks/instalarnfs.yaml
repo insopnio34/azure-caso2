@@ -1,0 +1,65 @@
+---
+
+# instalamos nfs-utils
+- name: instalar nfs-utils
+  dnf:
+    name: nfs-utils
+  become: yes
+  become_method: sudo
+
+# instalamos net-tools herramientas de red
+- name: instalar net-tools
+  dnf:
+    name: net-tools
+  become: yes
+  become_method: sudo
+
+# activamos el nfs-server
+- name: activar nfs-server
+  systemd:
+    name: nfs-server
+    enabled: yes
+  become: yes
+  become_method: sudo
+
+# iniciamos el nfs-server
+- name: iniciar nfs-server
+  systemd:
+    state: started
+    name: nfs-server
+
+# modificar el archivo exports
+- name: modificar fichero export con 192.168.1.110
+  lineinfile:
+    path: /etc/exports
+    line: '/srv/nfs	192.168.1.110(rw,sync)'
+
+- name: modificar fichero export con 192.168.1.111
+  lineinfile:
+    path: /etc/exports
+    line: '/srv/nfs	192.168.1.111(rw,sync)'
+
+
+# releer configuracion
+- name: releer configuracion
+  command: /usr/bin/exportfs -r
+  become: yes
+  become_method: sudo
+
+# releer configuracion
+- name: releer configuracion 1
+  command: /usr/bin/exportfs -r
+  become: yes
+  become_method: sudo
+
+# releer configuracion
+- name: releer configuracion 2
+  command: /usr/bin/exportfs -s
+  become: yes
+  become_method: sudo
+
+
+#- name: activar nfs-server
+# command: /usr/bin/systemctl  enable nfs-server
+ # become: yes
+ # become_method: sudo

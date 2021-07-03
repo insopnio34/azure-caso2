@@ -1,0 +1,11 @@
+---
+#configuraciones de ma la maquina nfs
+- name: configurar maquinas nfs
+  hosts: nfs
+  gather_facts: false
+  vars_files:
+    - "volumen_nfs.yaml"
+  roles:
+    - 4_identificar_crear_volumen
+    - 5_crear_filesystem_xfs
+

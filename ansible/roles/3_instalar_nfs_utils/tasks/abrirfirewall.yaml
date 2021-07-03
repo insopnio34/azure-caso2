@@ -1,0 +1,30 @@
+# abrir firewall
+- name: abrir firewall nfs
+  firewalld:
+    port: nfs
+    permanent: true
+    state: enabled
+
+- name: abrir firewall  rpc-bind
+  firewalld:
+    port: rpc-bind
+    permanent: true
+    state: enabled
+
+- name: abrir firewall mountd
+  firewalld:
+    port: mountd
+    permanent: true
+    state: enabled
+
+- name: firewal reload
+  command: /usr/bin/firewall-cmd --reload
+  become: yes
+  become_method: sudo
+
+
+#validar que esta correcto
+- name: firewal reload
+  command: /usr/bin/showmount -e 192.168.1.110
+  become: yes
+  become_method: sudo

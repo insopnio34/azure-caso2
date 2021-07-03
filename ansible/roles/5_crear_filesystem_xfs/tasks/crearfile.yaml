@@ -1,0 +1,29 @@
+---
+
+#crear filesystem
+- name: crear el filesystem de tipo XFS
+  filesystem:
+    fstype: xfs
+    dev: /dev/"{{nombrevolumen}}"/nfs_lv 
+
+#crear punto de montaje
+- name: punto de montaje 1
+  command: /usr/bin/mkdir /srv/nfs
+  become: yes
+  become_method: sudo
+
+- name: punto de montaje 2
+  command: /usr/bin/echo "/dev/{{nombrevolumen}}/nfs_lv        /srv/nfs                xfs     defaults        0 0" >> /etc/fstab
+  become: yes
+  become_method: sudo
+
+#comprobacion del montaje del volumen
+- name: montar volumenes
+  command: /usr/bin/mount -a
+  become: yes
+  become_method: sudo
+
+- name: visualizar volumenes
+  command: /usr/bin/df -hP
+  become: yes
+  become_method: sudo
