@@ -6,7 +6,7 @@
     device: "{{rutavolumen}}"
     number: 1
     state: present
-    with_items:
+  with_items:
         - "{{disco}}"
   register: particion_nfs
   become: yes
