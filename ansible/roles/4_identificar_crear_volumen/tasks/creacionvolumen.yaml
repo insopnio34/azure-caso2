@@ -19,7 +19,6 @@
     pvs: ["{{rutavolumenlogico}}"]
     force: no
     state: present
-    when: particion_nfs.changed
 
 #crear volumen logico
 - name: crear volumen logico
@@ -29,4 +28,3 @@
     size: 100%FREE
     force: no
     state: present
-    when: particion_nfs.changed
