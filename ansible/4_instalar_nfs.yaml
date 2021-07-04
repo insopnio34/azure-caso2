@@ -8,4 +8,6 @@
   roles:
     - 4_identificar_crear_volumen
     - 5_crear_filesystem_xfs
+    - 6_paquetes_nfs
+    - 7_configurar_acceso_share_nfs
 
