@@ -12,7 +12,7 @@
 #crear volumen logico
 - name: crear volumen logico
   lvol:
-    vg: firefly
+    vg: vg.services
     lv: "{{nombrevolumen}}"
     pvs: "{{rutavolumen}}"
   become: yes
