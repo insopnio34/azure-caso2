@@ -21,7 +21,7 @@
 
 #visualizar volumen
 - name: visualizar volumen
-  command: vgdisplay "{{nombrevolumen}}"
+  command: vgdisplay vg.services
   become: yes
   become_method: sudo
 
