@@ -6,9 +6,6 @@
     fstype: xfs
     dev: /dev/"{{nombregrupovolumen}}"/nfs_lv
     force: yes
-    async: 300
-    poll: 5
-    when: particion_nfs.changed
 
 #crear punto de montaje
 - name: punto de montaje 1
