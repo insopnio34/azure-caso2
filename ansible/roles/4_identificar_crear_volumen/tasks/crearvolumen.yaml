@@ -5,7 +5,9 @@
   lvg:
     vg: vg.services
     pvs: ["{{rutavolumen}}"]
-    pesize: '9'
+    pesize: '7'
+  become: yes
+  become_method: sudo
 
 #crear volumen logico
 - name: crear volumen logico
@@ -13,6 +15,8 @@
     vg: firefly
     lv: "{{nombrevolumen}}"
     pvs: "{{rutavolumen}}"
+  become: yes
+  become_method: sudo
 
 #visualizar volumen
 - name: visualizar volumen

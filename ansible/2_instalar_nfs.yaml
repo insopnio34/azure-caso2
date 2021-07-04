@@ -10,4 +10,5 @@
     - 5_crear_filesystem_xfs
     - 6_paquetes_nfs
     - 7_configurar_acceso_share_NFS
+    - 8_abrir_puertos_firewall
 

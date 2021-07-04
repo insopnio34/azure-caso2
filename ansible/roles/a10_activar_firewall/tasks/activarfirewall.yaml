@@ -1,0 +1,16 @@
+---
+
+# activar firewall
+- name: activar e iniciar firewall
+  systemd:
+    name: firewalld
+    state: started
+    enabled: True
+  become: yes
+  become_method: sudo
+
+# ver estado de firewall
+- name: ver estado
+  command: /usr/bin/systemctl status firewalld
+  become: yes
+  become_method: sudo

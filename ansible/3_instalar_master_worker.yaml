@@ -1,0 +1,14 @@
+#configuraciones para las maquinas de master y worker
+- name: configurar maquinas master y worker
+  hosts: master,worker
+  gather_facts: false
+  vars_files:
+    - "group_vars/volumen_nfs.yaml"
+  roles:
+    - a10_activar_firewall
+    - a11_activar_transparent_masquerading
+    - a12_permitir_trafico
+    - a13_instalar_ docker
+    - a14_configurar_repo_kubernetes
+    - a15_instalar_kubernets
+
