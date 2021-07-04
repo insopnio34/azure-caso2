@@ -15,6 +15,7 @@
     vg: vg.services
     lv: "{{nombrevolumen}}"
     pvs: "{{rutavolumen}}"
+    size: '512'
   become: yes
   become_method: sudo
 
