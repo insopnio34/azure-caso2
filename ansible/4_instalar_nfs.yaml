@@ -1,5 +1,5 @@
 ---
-#configuraciones de ma la maquina nfs
+#configuraciones de la maquina nfs
 - name: configurar maquinas nfs
   hosts: nfs
   gather_facts: false
