@@ -1,4 +1,5 @@
 ---
+
 #configuraciones de la maquina nfs
 - name: configurar maquinas nfs
   hosts: nfs
@@ -11,4 +12,3 @@
     - 6_paquetes_nfs
     - 7_configurar_acceso_share_NFS
     - 8_abrir_puertos_firewall
-

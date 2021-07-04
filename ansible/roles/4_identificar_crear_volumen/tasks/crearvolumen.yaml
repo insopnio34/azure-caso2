@@ -1,4 +1,5 @@
 ---
+
 #crear particion para nfs
 - name: crear una partición
   parted:
@@ -35,9 +36,3 @@
     async: 10
     poll: 2
     when: particion_nfs.changed
-
-
-
-
-
-  
