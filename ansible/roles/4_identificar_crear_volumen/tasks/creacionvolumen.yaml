@@ -1,7 +1,7 @@
 ---
 
 #crear particion para nfs
-- name: crear una partición
+- name: crear una particion
   parted:
     device: "{{rutavolumen}}"
     number: 1
