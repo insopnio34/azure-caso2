@@ -19,6 +19,8 @@
     pvs: ["{{rutavolumenlogico}}"]
     force: no
     state: present
+  become: yes
+  become_method: sudo
 
 #crear volumen logico
 - name: crear volumen logico
@@ -28,3 +30,5 @@
     size: 100%FREE
     force: no
     state: present
+  become: yes
+  become_method: sudo
