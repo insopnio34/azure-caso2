@@ -29,15 +29,15 @@
     name: nfs-server
 
 # modificar el archivo exports
-- name: modificar fichero export con 192.168.1.110
+- name: modificar fichero export con 192.168.0.110
   lineinfile:
     path: /etc/exports
     line: '/srv/nfs	192.168.1.110(rw,sync)'
 
-- name: modificar fichero export con 192.168.1.111
+- name: modificar fichero export con 192.168.0.111
   lineinfile:
     path: /etc/exports
-    line: '/srv/nfs	192.168.1.111(rw,sync)'
+    line: '/srv/nfs	192.168.0.111(rw,sync)'
 
 
 # releer configuracion
