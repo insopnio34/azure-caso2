@@ -6,6 +6,8 @@
     fstype: xfs
     dev: "/dev/{{nombregrupovolumen}}/nfs_lv"
     force: yes
+  become: yes
+  become_method: sudo
 
 #crear punto de montaje
 - name: punto de montaje 1
