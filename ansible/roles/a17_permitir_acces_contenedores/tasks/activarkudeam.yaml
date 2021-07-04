@@ -1,0 +1,5 @@
+# instalar kubernets
+- name: Activar
+  command: kubeadm config images pull
+  become: yes
+  become_method: sudo

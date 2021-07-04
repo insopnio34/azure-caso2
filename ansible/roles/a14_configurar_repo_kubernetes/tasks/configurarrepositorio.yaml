@@ -1,0 +1,7 @@
+#copiar fichero de configuración de Kubernetes
+- name: copiar fichero de configuración repositorio kubernetes
+  copy:
+    src: files/kubernetes.repo
+    dest: /etc/yum.repos.d/
+  become: yes
+  become_method: sudo

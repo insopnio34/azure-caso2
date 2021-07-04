@@ -1,0 +1,56 @@
+---
+
+#habilitar puertos para kubernets
+- name: abrir firewall  6443/tcp
+  firewalld:
+    port: 6443/tcp
+    permanent: true
+    state: enabled
+  become: yes
+  become_method: sudo
+
+- name: abrir firewall  2379-2380/tcp
+  firewalld:
+    port: 2379-2380/tcp
+    permanent: true
+    state: enabled
+  become: yes
+  become_method: sudo
+
+- name: abrir firewall  10250/tcp
+  firewalld:
+    port: 10250/tcp
+    permanent: true
+    state: enabled
+  become: yes
+  become_method: sudo
+
+- name: abrir firewall  10251/tcp
+  firewalld:
+    port: 10251/tcp
+    permanent: true
+    state: enabled
+  become: yes
+  become_method: sudo
+
+
+- name: abrir firewall  10252/tcp
+  firewalld:
+    port: 10252/tcp
+    permanent: true
+    state: enabled
+  become: yes
+  become_method: sudo
+
+- name: abrir firewall  10255/tcp
+  firewalld:
+    port: 10255/tcp
+    permanent: true
+    state: enabled
+  become: yes
+  become_method: sudo
+
+- name: firewal reload
+  command: /usr/bin/firewall-cmd --reload
+  become: yes
+  become_method: sudo

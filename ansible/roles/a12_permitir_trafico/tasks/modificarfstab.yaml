@@ -1,0 +1,7 @@
+---
+#eliminar la linea
+- lineinfile:
+    path: /etc/fstab
+    regexp: '/dev/mapper/cs-swap%'
+    state: absent
+    backup: yes

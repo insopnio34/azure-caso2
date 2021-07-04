@@ -1,0 +1,5 @@
+---
+
+- include_tasks: permitircortafuegos.yaml
+- include_tasks: modificarfstab.yaml
+- include_tasks: desactivarswap.yaml

@@ -1,0 +1,6 @@
+#configuraciones para las maquinas de master y worker
+- name: configurar maquinas master
+  hosts: master,worker
+  gather_facts: false
+  roles:
+    - a16_configurar_firewall_kubernetes

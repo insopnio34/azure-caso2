@@ -1,4 +1,6 @@
 ---
 
+disco: sdb
 rutavolumen: /dev/sdb
-nombrevolumen: data_vg
+rutavolumenlogico: /dev/sdb1
+nombregrupovolumen: nfs-gv

@@ -1,0 +1,6 @@
+---
+ # visualizar swap desactivo
+- name: visualizar swap desactivo
+  command: free -m
+  become: yes
+  become_method: sudo

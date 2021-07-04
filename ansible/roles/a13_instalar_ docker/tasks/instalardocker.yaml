@@ -1,0 +1,22 @@
+---
+
+# instalar docke
+- name: insertar repositorio
+  command: dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
+  become: yes
+  become_method: sudo
+
+- name: instalar docker
+  dnf:
+    name: docker-ce-20.10.6-3.el8
+  become: yes
+  become_method: sudo
+
+#habilitar e iniciar docker
+- name: activar e iniciar docker
+  systemd:
+    name: docker
+    enabled: yes
+    state: started
+  become: yes
+  become_method: sudo

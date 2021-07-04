@@ -7,16 +7,12 @@
   become: yes
   become_method: sudo
 
-# activamos el Chrony
-- name: activar chrony
-  command: /usr/bin/systemctl enable chronyd
-  become: yes
-  become_method: sudo
-
-
- # iniciamos el Chrony
-- name: iniciar chrony
-  command: /usr/bin/systemctl start chronyd
+#iniciar y activar chrony
+- name: iniciar y activar chrony
+  systemd:
+    name: chrony
+    enabled: yes
+    state: started
   become: yes
   become_method: sudo
 
@@ -25,3 +21,16 @@
   command: /usr/bin/timedatectl set-ntp true
   become: yes
   become_method: sudo
+
+# activamos el Chrony
+#- name: activar chrony
+#  command: /usr/bin/systemctl enable chronyd
+#  become: yes
+#  become_method: sudo
+
+
+ # iniciamos el Chrony
+#- name: iniciar chrony
+#  command: /usr/bin/systemctl start chronyd
+#  become: yes
+#  become_method: sudo

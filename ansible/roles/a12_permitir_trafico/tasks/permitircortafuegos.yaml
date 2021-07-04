@@ -1,0 +1,22 @@
+---
+
+#copiar fichero de configuración
+- name: copiar fichero de configuración
+  copy:
+    src: files/k8s.conf
+    dest: /etc/sysctl.d/
+  become: yes
+  become_method: sudo
+
+  # aplicar archivo k8s.conf
+- name: aplicar archivo k8s.conf
+  command: sysctl --system
+  become: yes
+  become_method: sudo
+
+ # desactivar  swap
+- name: desactivar swap
+  command: swapoff  -a
+  become: yes
+  become_method: sudo
+

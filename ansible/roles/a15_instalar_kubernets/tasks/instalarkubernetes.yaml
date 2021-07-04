@@ -1,0 +1,17 @@
+---
+
+# instalar kubernets
+- name: Instalar kubernetes
+  command: dnf install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
+  become: yes
+  become_method: sudo
+
+
+#habilitar e iniciar docker
+- name: activar kubelet
+  systemd:
+    name: kubelet
+    enabled: yes
+    state: started
+  become: yes
+  become_method: sudo

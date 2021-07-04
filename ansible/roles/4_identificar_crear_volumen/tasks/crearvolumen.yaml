@@ -1,41 +1,42 @@
 ---
+#crear particion para nfs
+- name: crear una partición
+  parted:
+    device: "{{rutavolumen}}"
+    number: 1
+    state: present
+    async: 300
+    poll: 5
+    with_items:
+        - "{{disco}}"
+  register: particion_nfs
+  become: yes
+  become_method: sudo
 
 #crear volumen
 - name: crear grupo de volumen
   lvg:
-    vg: vg.services
-    pvs: ["{{rutavolumen}}"]
-    pesize: '10.00g'
-  become: yes
-  become_method: sudo
+    vg: "{{nombregrupovolumen}}"
+    pvs: ["{{rutavolumenlogico}}"]
+    force: no
+    state: present
+    async: 10
+    poll: 2
+    when: particion_nfs.changed
 
 #crear volumen logico
 - name: crear volumen logico
   lvol:
-    vg: vg.services
-    lv: "{{nombrevolumen}}"
-    pvs: "{{rutavolumen}}"
-    size: '5.00g'
-  become: yes
-  become_method: sudo
+    vg: "{{nombregrupovolumen}}"
+    lv: nfs_lv
+    size: 100%FREE
+    force: no
+    state: present
+    async: 10
+    poll: 2
+    when: particion_nfs.changed
 
-#visualizar volumen
-- name: visualizar volumen
-  command: vgdisplay vg.services
-  become: yes
-  become_method: sudo
 
-#crear volumen logico nfs
-- name: crear volumen logico nfs
-  command: lvcreate -l+2559 -n nfs_lv /dev/vg.services
-  become: yes
-  become_method: sudo
-
- #visualizar volumen nfs
-- name: visualizar logico nfs
-  command: lvs
-  become: yes
-  become_method: sudo
 
 
 
