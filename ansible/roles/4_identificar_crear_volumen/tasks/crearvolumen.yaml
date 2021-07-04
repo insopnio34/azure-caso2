@@ -27,7 +27,7 @@
 
 #crear volumen logico nfs
 - name: crear volumen logico nfs
-  command: lvcreate -l+2559 -n nfs_lv /dev/"{{nombrevolumen}}"
+  command: lvcreate -l+2559 -n nfs_lv /dev/vg.services
   become: yes
   become_method: sudo
 
