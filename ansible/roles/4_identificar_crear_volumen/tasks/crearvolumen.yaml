@@ -1,7 +1,7 @@
 ---
 
 #crear volumen
-- name: crear volumen
+- name: crear grupo de volumen
   lvg:
     vg: vg.services
     pvs: ["{{rutavolumen}}"]
