@@ -5,7 +5,7 @@
   lvg:
     vg: vg.services
     pvs: ["{{rutavolumen}}"]
-    pesize: '5.00g'
+    pesize: '7.00g'
   become: yes
   become_method: sudo
 
@@ -15,7 +15,7 @@
     vg: vg.services
     lv: "{{nombrevolumen}}"
     pvs: "{{rutavolumen}}"
-    size: '4.00g'
+    size: '5.00g'
   become: yes
   become_method: sudo
 
