@@ -4,7 +4,7 @@
 - name: crear el filesystem de tipo XFS
   filesystem:
     fstype: xfs
-    dev: /dev/"{{nombregrupovolumen}}"/nfs_lv
+    dev: "/dev/{{nombregrupovolumen}}/nfs_lv"
     force: yes
 
 #crear punto de montaje
