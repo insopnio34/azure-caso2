@@ -6,8 +6,6 @@
     device: "{{rutavolumen}}"
     number: 1
     state: present
-    async: 300
-    poll: 5
     with_items:
         - "{{disco}}"
   register: particion_nfs
@@ -21,8 +19,6 @@
     pvs: ["{{rutavolumenlogico}}"]
     force: no
     state: present
-    async: 10
-    poll: 2
     when: particion_nfs.changed
 
 #crear volumen logico
@@ -33,6 +29,4 @@
     size: 100%FREE
     force: no
     state: present
-    async: 10
-    poll: 2
     when: particion_nfs.changed
