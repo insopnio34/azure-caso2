@@ -21,19 +21,19 @@
 
 #visualizar volumen
 - name: visualizar volumen
-  command: /usr/bin/vgdisplay "{{nombrevolumen}}"
+  command: vgdisplay "{{nombrevolumen}}"
   become: yes
   become_method: sudo
 
 #crear volumen logico nfs
 - name: crear volumen logico nfs
-  command: /usr/bin/lvcreate -l+2559 -n nfs_lv /dev/"{{nombrevolumen}}"
+  command: lvcreate -l+2559 -n nfs_lv /dev/"{{nombrevolumen}}"
   become: yes
   become_method: sudo
 
  #visualizar volumen nfs
 - name: visualizar logico nfs
-  command: /usr/bin/lvs
+  command: lvs
   become: yes
   become_method: sudo
 
