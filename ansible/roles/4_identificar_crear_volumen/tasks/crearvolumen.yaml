@@ -5,7 +5,7 @@
   lvg:
     vg: vg.services
     pvs: ["{{rutavolumen}}"]
-    pesize: '7.00g'
+    #pesize: '9.00g'
   become: yes
   become_method: sudo
 
