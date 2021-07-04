@@ -4,7 +4,7 @@
   hosts: nfs
   gather_facts: false
   vars_files:
-    - "volumen_nfs.yaml"
+    - "group_vars/volumen_nfs.yaml"
   roles:
     - 4_identificar_crear_volumen
     - 5_crear_filesystem_xfs
