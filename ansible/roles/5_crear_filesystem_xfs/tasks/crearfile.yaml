@@ -9,14 +9,14 @@
   become: yes
   become_method: sudo
 
-#crear punto de montaje
+#crear punto de montajes
 - name: punto de montaje 1
-  command: /usr/bin/mkdir /srv/nfs
+  command: mkdir /srv/nfs
   become: yes
   become_method: sudo
 
 - name: punto de montaje 2
-  command: /usr/bin/echo "/dev/{{nombrevolumen}}/nfs_lv        /srv/nfs                xfs     defaults        0 0" >> /etc/fstab
+  command: /usr/bin/echo "/dev/{{nombregrupovolumen}}/nfs_lv        /srv/nfs                xfs     defaults        0 0" >> /etc/fstab
   become: yes
   become_method: sudo
 

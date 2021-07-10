@@ -4,13 +4,13 @@
     "\\ansible",
     "\\ansible\\group_vars",
     "\\ansible\\roles",
-    "\\ansible\\roles\\1_sincronizacion_horaria",
-    "\\ansible\\roles\\1_sincronizacion_horaria\\tasks",
+    "\\ansible\\roles\\2_desinstalar_SELinux",
     "\\ansible\\roles\\3_instalar_nfs_utils",
     "\\ansible\\roles\\4_identificar_crear_volumen",
-    "\\ansible\\roles\\6_paquetes_nfs",
-    "\\ansible\\roles\\6_paquetes_nfs\\tasks"
+    "\\ansible\\roles\\5_crear_filesystem_xfs",
+    "\\ansible\\roles\\a17_permitir_acces_contenedores",
+    "\\ansible\\roles\\a17_permitir_acces_contenedores\\tasks"
   ],
-  "SelectedNode": "\\ansible\\roles\\1_sincronizacion_horaria\\tasks\\instalarChrony.yaml",
+  "SelectedNode": "\\ansible\\group_vars\\volumen_nfs.yaml",
   "PreviewInSolutionExplorer": false
 }
