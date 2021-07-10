@@ -8,7 +8,7 @@
 
 # Permitiremos el acceso desde los workers
 - name: Permitiremos el acceso desde los workers
-  command: firewall-cmd --permanent --add-rich-rule 'rule family=ipv4 source address={{ipworker}/32 accept'
+  command: firewall-cmd --permanent --add-rich-rule 'rule family=ipv4 source address={{ipworker}}/32 accept'
   become: yes
   become_method: sudo
 
