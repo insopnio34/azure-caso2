@@ -1,7 +1,7 @@
 ---
 
-#copiar fichero de configuración
-- name: copiar fichero de configuración
+#copiar fichero de configuracion
+- name: copiar fichero de configuracion
   copy:
     src: files/k8s.conf
     dest: /etc/sysctl.d/
