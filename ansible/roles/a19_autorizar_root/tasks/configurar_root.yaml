@@ -14,8 +14,8 @@
   become: yes
   become_method: sudo
 
-  #copiar configuracion kube
-- name: opiar configuracion
+#copiar configuracion kube
+- name: copiar configuracion admin
   copy: 
     src: /etc/kubernetes/admin.conf 
     dest: /root/.kube/config
