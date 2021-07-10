@@ -1,11 +1,12 @@
 ---
 
 # se ha de ejecutar el siguiente comando para que el root pueda ejecutar kubectl
-- name: Activar al root para ejecutar kubectl
-  command: export KUBECONFIG=/etc/kubernetes/admin.conf
-  become: yes
-  become_method: sudo
+#- name: Activar al root para ejecutar kubectl
+  #command: export KUBECONFIG=/etc/kubernetes/admin.conf
+  #become: yes
+  #become_method: sudo
 
+# se ha de ejecutar el siguiente comando para que el root pueda ejecutar kubectl
 # crear directorio Kube
 - name: Creates directorio kube
   file:
