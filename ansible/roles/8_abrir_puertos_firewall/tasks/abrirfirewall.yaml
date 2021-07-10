@@ -23,14 +23,22 @@
   become: yes
   become_method: sudo
 
-- name: firewal reload
-  command: /usr/bin/firewall-cmd --reload
+#- name: firewall reload
+ # command: /usr/bin/firewall-cmd --reload
+ # become: yes
+  #become_method: sudo
+
+  # reiniciar firewall
+- name: reiniciar firewall
+  systemd:
+    name: firewalld
+    state: reloaded
   become: yes
   become_method: sudo
 
 
 #validar que esta correcto
-- name: firewal reload
-  command: /usr/bin/showmount -e 192.168.0.110
+- name: firewall reload
+  command: showmount -e 192.168.0.110
   become: yes
   become_method: sudo
