@@ -2,12 +2,12 @@
 
 # activar transparent masquerading 
 - name: ejecutar modprobe
-  command: /usr/bin/modprobe br_netfilter
+  command: modprobe br_netfilter
   become: yes
   become_method: sudo
 
 - name: ejecutar firewall masquerade 
-  command: /usr/bin/firewall-cmd --add-masquerade --permanent
+  command: firewall-cmd --add-masquerade --permanent
   become: yes
   become_method: sudo
 
