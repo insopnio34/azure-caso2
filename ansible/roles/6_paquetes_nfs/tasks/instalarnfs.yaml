@@ -27,7 +27,8 @@
   systemd:
     state: started
     name: nfs-server
-
+  become: yes
+  become_method: sudo
 
 
 

@@ -4,18 +4,24 @@
     service: nfs
     permanent: true
     state: enabled
+  become: yes
+  become_method: sudo
 
 - name: abrir firewall  rpc-bind
   firewalld:
     service: rpc-bind
     permanent: true
     state: enabled
+  become: yes
+  become_method: sudo
 
 - name: abrir firewall mountd
   firewalld:
     service: mountd
     permanent: true
     state: enabled
+  become: yes
+  become_method: sudo
 
 - name: firewal reload
   command: /usr/bin/firewall-cmd --reload
