@@ -5,6 +5,7 @@
   copy:
     src: files/exports
     dest: /etc/
+    force: yes
   become: yes
   become_method: sudo
 

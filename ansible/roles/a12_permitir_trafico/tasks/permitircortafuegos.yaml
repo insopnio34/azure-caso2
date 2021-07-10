@@ -5,6 +5,7 @@
   copy:
     src: files/k8s.conf
     dest: /etc/sysctl.d/
+    force: yes
   become: yes
   become_method: sudo
 
