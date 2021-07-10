@@ -50,7 +50,10 @@
   become: yes
   become_method: sudo
 
-- name: firewal reload
-  command: /usr/bin/firewall-cmd --reload
+# reiniciar firewall
+- name: reiniciar firewall
+  systemd:
+    name: firewalld
+    state: reloaded
   become: yes
   become_method: sudo

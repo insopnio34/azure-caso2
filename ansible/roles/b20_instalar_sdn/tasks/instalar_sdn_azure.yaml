@@ -1,0 +1,39 @@
+---
+
+#verificar que en el master esta desplegado las opciones --cluster-cidr= y --allocate-node-cidrs=tru
+- name: verificar que cluster-cidr allocate-node-cidrs estan desplegados
+  command: ps ax | grep cluster
+  become: yes
+  become_method: sudo
+
+
+  # abrir firewall 
+- name: abrir firewall 8285/udp
+  firewalld:
+    port: 8285/udp
+    permanent: true
+    state: enabled
+  become: yes
+  become_method: sudo
+
+- name: abrir firewall 8472/udp
+  firewalld:
+    port: 8472/udp
+    permanent: true
+    state: enabled
+  become: yes
+  become_method: sudo
+
+  # reiniciar firewall
+- name: reiniciar firewall
+  systemd:
+    name: firewalld
+    state: reloaded
+  become: yes
+  become_method: sudo
+
+# se ha de descargar el fichero canal.yaml
+- name: descargar fichero canal
+  command: kubectl apply -f https://docs.projectcalico.org/manifests/canal.yaml
+  become: yes
+  become_method: sudo

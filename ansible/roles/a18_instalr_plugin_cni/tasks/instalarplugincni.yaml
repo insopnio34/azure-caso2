@@ -1,0 +1,8 @@
+---
+
+# Instalamos el plugin CNI
+- name: Instalamos el plugin CNI
+  command: kubeadm init --pod-network-cidr 192.169.0.0/16
+  register: variable_kubeadm
+  become: yes
+  become_method: sudo

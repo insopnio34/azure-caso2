@@ -1,0 +1,35 @@
+---
+
+# se ha de ejecutar el siguiente comando para que el root pueda ejecutar kubectl
+- name: Activar al root para ejecutar kubectl
+  command: export KUBECONFIG=/etc/kubernetes/admin.conf
+  become: yes
+  become_method: sudo
+
+# crear directorio Kube
+- name: Creates directorio kube
+  file:
+    path: /root/.kube
+    state: directory
+  become: yes
+  become_method: sudo
+
+  #copiar configuracion kube
+- name: opiar configuracion
+  copy: 
+    src: /etc/kubernetes/admin.conf 
+    dest: /root/.kube/config
+  force: yes
+  become: yes
+  become_method: sudo
+
+#modificar propietario usuario
+- name: modificar  propietario
+  command: chown $(id -u):$(id -g) /root/.kube/config
+  become: yes
+  become_method: sudo
+
+- name: Obtener nodos
+  command: kubectl get nodes
+  become: yes
+  become_method: sudo

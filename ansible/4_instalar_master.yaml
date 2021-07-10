@@ -2,5 +2,11 @@
 - name: configurar maquinas master
   hosts: master,worker
   gather_facts: false
+  vars_files:
+    - "group_vars/ipsystema.yaml"
   roles:
     - a16_configurar_firewall_kubernetes
+    - a17_permitir_acces_contenedores
+    - a18_instalr_plugin_cni
+    - a19_autorizar_root
+    - b20_instalar_sdn

@@ -1,5 +1,31 @@
+---
+
 # instalar kubernets
 - name: Activar
   command: kubeadm config images pull
+  become: yes
+  become_method: sudo
+
+# Permitiremos el acceso desde los workers
+- name: Permitiremos el acceso desde los workers
+  command: firewall-cmd --permanent --add-rich-rule 'rule family=ipv4 source address={{ipworker}/32 accept'
+  become: yes
+  become_method: sudo
+
+# Reiniciar firewall
+- name: Reiniciar firewall
+  command: firewall-cmd --reload
+  become: yes
+  become_method: sudo
+
+  # Permitir el acceso de los contenedores a localhost
+- name: Permitir el acceso de los contenedores a localhost
+  command: firewall-cmd --zone=public --permanent --add-rich-rule 'rule family=ipv4 source address={{ipinet}} accept'
+  become: yes
+  become_method: sudo
+
+  # Reiniciar firewall
+- name: Reiniciar firewall
+  command: firewall-cmd --reload
   become: yes
   become_method: sudo
