@@ -16,13 +16,11 @@
   become_method: sudo
 
 #copiar configuracion kube
-- name: copiar configuracion admin
-  copy: 
-    src: /etc/kubernetes/admin.conf 
-    dest: /root/.kube/config
-    force: yes
+- name: Activar al root para ejecutar kubectl
+  command: cp -i /etc/kubernetes/admin.conf /root/.kube/config
   become: yes
   become_method: sudo
+
 
 #modificar propietario usuario
 - name: modificar  propietario
