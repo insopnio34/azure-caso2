@@ -1,6 +1,8 @@
 ---
-#eliminar la linea
-- lineinfile:
+#eliminar la linea des swap
+
+- name: eliminar la linea
+  lineinfile:
     path: /etc/fstab
     regexp: '/dev/mapper/cs-swap%'
     state: absent
