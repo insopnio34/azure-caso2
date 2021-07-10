@@ -24,9 +24,8 @@
 
 #modificar propietario usuario
 - name: modificar  propietario
-  command: chown $(id -u):$(id -g) /root/.kube/config
+  command: sudo chown $(id -u):$(id -g) /root/.kube/config
   become: yes
-  become_method: sudo
 
 - name: Obtener nodos
   command: kubectl get nodes
