@@ -1,4 +1,4 @@
-#copiar fichero de configuración de Kubernetes
+#copiar fichero de configuracion de Kubernetes
 - name: copiar fichero de configuracion repositorio kubernetes
   copy:
     src: files/kubernetes.repo
