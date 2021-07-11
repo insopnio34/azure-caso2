@@ -16,7 +16,7 @@
   become_method: sudo
 
 #copiar configuracion kube
-- name: Activar al root para ejecutar kubectl
+- name: copiar configuracion kube
   command: sudo cp -i /etc/kubernetes/admin.conf /root/.kube/config
   become: yes
   become_method: sudo
