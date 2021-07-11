@@ -11,4 +11,4 @@
     - a19_autorizar_root
     - b20_instalar_sdn
 
-- debug: msg="{{variable_kubeadm.stdout}}"
+#- debug: msg="{{variable_kubeadm.stdout}}"
