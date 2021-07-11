@@ -25,3 +25,9 @@
     state: reloaded
   become: yes
   become_method: sudo
+
+# unirse al cluster
+- name: unir  al cluster
+  command: "{{variable_kubeadm}}"
+  become: yes
+  become_method: sudo

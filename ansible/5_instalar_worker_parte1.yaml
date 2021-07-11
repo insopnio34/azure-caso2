@@ -6,4 +6,3 @@
     - "group_vars/ipsystema.yaml"
   roles:
     - b21_abrir puertos_worker
-    - b22_unirse_cluster

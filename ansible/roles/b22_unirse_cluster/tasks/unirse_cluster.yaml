@@ -1,7 +1,0 @@
----
-
-# unirse al cluster
-- name: unir al al cluster
-  command: "{{variable_kubeadm}}"
-  become: yes
-  become_method: sudo
