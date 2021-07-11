@@ -3,6 +3,6 @@
   hosts: worker
   gather_facts: false
   vars_files:
-    - "group_vars/ipsystema.yaml"
+    - "group_vars/variablesmasteraworker.yaml"
   roles:
     - b21_abrir puertos_worker

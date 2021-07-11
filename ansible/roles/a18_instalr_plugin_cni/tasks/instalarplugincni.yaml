@@ -8,6 +8,18 @@
   become_method: sudo
 
 
-- name: pasar variable
-  debug:
-    msg: msg="{{variable_kubeadm.stdout}}"
+- name: eliminar line
+  lineinfile:
+    path: ../../../group_vars/variablesmasteraworker.yaml
+    regexp: 'salida_variable_kubeadm%'
+    state: absent
+    backup: yes
+  become: yes
+  become_method: sudo
+
+- name: modificar linea
+  lineinfile:
+    path: /../group_vars/variablesmasteraworker.yaml
+    line: "salida_variable_kubeadm: {{variable_kubeadm}}"
+  become: yes
+  become_method: sudo
