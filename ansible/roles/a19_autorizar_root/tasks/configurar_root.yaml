@@ -16,23 +16,30 @@
   become_method: sudo
 
 #copiar configuracion kube
-#- name: Activar al root para ejecutar kubectl
- # command: cp -i /etc/kubernetes/admin.conf /root/.kube/config
-  #become: yes
-  #become_method: sudo
+- name: Activar al root para ejecutar kubectl
+  command: sudo cp -i /etc/kubernetes/admin.conf /root/.kube/config
+  become: yes
+  become_method: sudo
 
 
 # copiar configuracion kube y modificar propietario usuario
-- name: Activar al root para ejecutar kubectl y  modificar  propietario
-  copy:
-    src: /etc/kubernetes/admin.conf
-    dest: /root/.kube/config
+- name:   modificar  propietario
+  file:
+    path: /root/.kube/config
     owner: "{{ansible_user | default(ansible_user_id) }}"
     group: "{{ansible_user | default(ansible_user_id) }}"
     mode: 0755
-    remote_src: no
   become: yes
   become_method: sudo
+  #copy:
+   # src: /etc/kubernetes/admin.conf
+    #dest: /root/.kube/config
+    #owner: "{{ansible_user | default(ansible_user_id) }}"
+    #group: "{{ansible_user | default(ansible_user_id) }}"
+    #mode: 0755
+    #remote_src: no
+  #become: yes
+  #become_method: sudo
   #command: sudo chown $(id -u):$(id -g) /root/.kube/config
   #command: chown root. /root/.kube/config
   #become: yes
