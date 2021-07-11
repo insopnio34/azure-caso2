@@ -24,8 +24,16 @@
 
 #modificar propietario usuario
 - name: modificar  propietario
-  command: sudo chown $(id -u):$(id -g) /root/.kube/config
-  become: yes
+  file:
+    path: /root/.kube/config 
+    owner: "{{ ansible_effective_user_id }}"
+    group: "{{ ansible_effective_group_id }}"
+    become: yes
+    become_method: sudo
+  #command: sudo chown $(id -u):$(id -g) /root/.kube/config
+  #command: chown root. /root/.kube/config
+  #become: yes
+  #become_method: sudo
 
 - name: Obtener nodos
   command: kubectl get nodes

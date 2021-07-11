@@ -1,0 +1,6 @@
+---
+
+# unir dos playbook para pasar variables
+  - import_playbook: 1_instalar_todos_vm.yaml
+  - import_playbook: 2_instalar_nfs.yaml
+  - import_playbook: 3_instalar_master_worker.yaml
