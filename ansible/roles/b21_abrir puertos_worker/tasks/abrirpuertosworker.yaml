@@ -28,6 +28,6 @@
 
 # unirse al cluster
 - name: unir  al cluster
-  command: "{{variable_kubeadm}}"
+  command: "{{variable_kubeadm.stdout}}"
   become: yes
   become_method: sudo
