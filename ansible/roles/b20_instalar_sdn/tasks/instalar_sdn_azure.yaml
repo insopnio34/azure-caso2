@@ -1,10 +1,10 @@
 ---
 
 #verificar que en el master esta desplegado las opciones --cluster-cidr= y --allocate-node-cidrs=tru
-- name: verificar que cluster-cidr allocate-node-cidrs estan desplegados
-  command: ps ax | grep cluster
-  become: yes
-  become_method: sudo
+#- name: verificar que cluster-cidr allocate-node-cidrs estan desplegados
+ # command: ps ax | grep cluster
+  #become: yes
+  #become_method: sudo
 
 
   # abrir firewall 
