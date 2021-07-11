@@ -10,7 +10,7 @@
 
 - name: eliminar line
   lineinfile:
-    path: ../../../group_vars/variablesmasteraworker.yaml
+    path: "{{pathfichero}}/variablesmasteraworker.yaml"
     regexp: 'salida_variable_kubeadm%'
     state: absent
     backup: yes
@@ -19,7 +19,7 @@
 
 - name: modificar linea
   lineinfile:
-    path: /../group_vars/variablesmasteraworker.yaml
+    path: "{{pathfichero}}/variablesmasteraworker.yaml"
     line: "salida_variable_kubeadm: {{variable_kubeadm}}"
   become: yes
   become_method: sudo
