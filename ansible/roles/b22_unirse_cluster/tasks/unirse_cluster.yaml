@@ -1,7 +1,8 @@
 ---
 
-#ejecutar linea que proviene del activa kubeadm init
-- name: ejecutar en los nodos el comando de kubeadm
-  command: "{{variable_kubeadm}}"
+# ejecutar comando de kubeadm
+
+- name: ejecutar comando de kubeadm
+  command: {{variable_kubeadm}}
   become: yes
   become_method: sudo

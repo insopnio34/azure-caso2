@@ -3,7 +3,7 @@
 - name: abrir firewall  10250/tcp
   firewalld:
     port: 10250/tcp
-    zone: interna
+    zone: public
     permanent: true
     state: enabled
   become: yes
@@ -12,7 +12,7 @@
 - name: abrir firewall  30000-32767/tcp
   firewalld:
     port: 30000-32767/tcp
-    zone: interna
+    zone: public
     permanent: true
     state: enabled
   become: yes
