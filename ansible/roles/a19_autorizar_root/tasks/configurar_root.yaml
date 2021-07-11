@@ -26,8 +26,8 @@
 - name: modificar  propietario
   file:
     path: /root/.kube/config 
-    owner: "{{ ansible_effective_user_id }}"
-    group: "{{ ansible_effective_group_id }}"
+    owner: "{{ansible_effective_user_id}}"
+    group: "{{ansible_effective_group_id}}"
     become: yes
     become_method: sudo
   #command: sudo chown $(id -u):$(id -g) /root/.kube/config
