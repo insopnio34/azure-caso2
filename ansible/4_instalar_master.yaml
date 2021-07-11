@@ -3,7 +3,7 @@
   hosts: master
   gather_facts: false
   vars_files:
-    - "group_vars/ipsystema.yaml, group_vars/variablesmasteraworker.yaml"
+    - "group_vars/ipsystema.yaml"
   roles:
     - a16_configurar_firewall_kubernetes
     - a17_permitir_acces_contenedores
@@ -11,4 +11,3 @@
     - a19_autorizar_root
     - b20_instalar_sdn
 
-#- debug: msg="{{variable_kubeadm.stdout}}"
