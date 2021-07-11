@@ -2,15 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\ansible",
-    "\\ansible\\group_vars",
     "\\ansible\\roles",
-    "\\ansible\\roles\\2_desinstalar_SELinux",
-    "\\ansible\\roles\\3_instalar_nfs_utils",
-    "\\ansible\\roles\\4_identificar_crear_volumen",
-    "\\ansible\\roles\\5_crear_filesystem_xfs",
-    "\\ansible\\roles\\a17_permitir_acces_contenedores",
-    "\\ansible\\roles\\a17_permitir_acces_contenedores\\tasks"
+    "\\ansible\\roles\\b20_instalar_sdn",
+    "\\ansible\\roles\\b22_unirse_cluster",
+    "\\ansible\\roles\\b22_unirse_cluster\\tasks",
+    "\\ansible\\roles\\b23_instalar_ingres_controller",
+    "\\ansible\\roles\\b23_instalar_ingres_controller\\tasks",
+    "\\ansible\\roles\\b24_crear_usuario_admin_cluster",
+    "\\ansible\\roles\\b24_crear_usuario_admin_cluster\\tasks"
   ],
-  "SelectedNode": "\\ansible\\group_vars\\volumen_nfs.yaml",
+  "SelectedNode": "\\ansible\\roles\\b20_instalar_sdn\\tasks\\instalar_sdn_azure.yaml",
   "PreviewInSolutionExplorer": false
 }

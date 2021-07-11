@@ -6,3 +6,4 @@
   register: variable_kubeadm
   become: yes
   become_method: sudo
+

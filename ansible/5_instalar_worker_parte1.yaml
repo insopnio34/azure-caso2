@@ -1,0 +1,9 @@
+#configuraciones para la maquina worker
+- name: configurar maquina worker
+  hosts: worker
+  gather_facts: false
+  vars_files:
+    - "group_vars/ipsystema.yaml"
+  roles:
+    - b21_abrir puertos_worker
+    - b22_unirse_cluster

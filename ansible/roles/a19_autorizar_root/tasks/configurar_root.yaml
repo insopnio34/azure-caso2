@@ -8,7 +8,7 @@
 
 # se ha de ejecutar el siguiente comando para que el root pueda ejecutar kubectl
 # crear directorio Kube
-- name: Creates directorio kube
+- name: Crear directorio kube
   file:
     path: /root/.kube
     state: directory

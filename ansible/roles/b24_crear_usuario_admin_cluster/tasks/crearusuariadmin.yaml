@@ -1,0 +1,42 @@
+---
+
+#cear usuario administrador kubernetes
+- name: Crear usuario administrador
+  user:
+    name: kubeadmin
+    comment: "administrador kubernetes"
+    home: /home/kubeadmin
+  become: yes
+  become_method: sudo
+
+#cambiar password administrador kubernetes
+- name: Cambiamos el password
+  user:
+    user: kubeadmin
+    password: "{{ password_kubeadmin }}"
+  become: yes
+  become_method: sudo
+
+  # crear directorio kubeadmin
+- name: Creates directorio kube para kubeadmin
+  file:
+    path: /home/kubeadmin/.kube
+    state: directory
+  become: yes
+  become_method: sudo
+
+#copiar configuracion kubeadmin
+- name: Activar al root para ejecutar kubectl
+  command: cp -i /etc/kubernetes/admin.conf /home/kubeadmin/.kube/config
+  become: yes
+  become_method: sudo
+
+
+#elevar permisos para el usuario kubeadmin
+- name: Elevar permisos para el usuario kubeadmin
+  copy:
+    src: files/kubeadmin
+    dest: /etc/sudoers.d/
+    force: yes
+  become: yes
+  become_method: sudo
