@@ -30,7 +30,7 @@
     owner: "{{ansible_user | default(ansible_user_id) }}"
     group: "{{ansible_user | default(ansible_user_id) }}"
     mode: 0755
-    #remote_src: true
+    remote_src: no
   become: yes
   become_method: sudo
   #command: sudo chown $(id -u):$(id -g) /root/.kube/config
