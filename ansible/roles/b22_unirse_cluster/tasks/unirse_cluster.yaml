@@ -1,8 +1,7 @@
 ---
 
-# ejecutar comando de kubeadm
-
-- name: ejecutar comando de kubeadm
-  command: {{variable_kubeadm}}
+# unirse al cluster
+- name: unir al al cluster
+  command: "{{variable_kubeadm}}"
   become: yes
   become_method: sudo
