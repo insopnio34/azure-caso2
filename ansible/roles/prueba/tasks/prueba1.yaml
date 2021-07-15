@@ -4,7 +4,7 @@
 - name: modificar
   lineinfile:
     path: "{{pathfichero}}/variablesmasteraworker.yaml"
-    regexp: 'remplazar'
+    regexp: '^(.*)remplazar1(.*)$'
     line: "variable_kubeadm"
     state: present
     backup: yes
