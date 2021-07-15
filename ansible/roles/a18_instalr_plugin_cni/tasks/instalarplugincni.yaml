@@ -1,4 +1,4 @@
----
+﻿---
 
 # Instalamos el plugin CNI
 - name: Instalamos el plugin CNI
@@ -8,18 +8,19 @@
   become_method: sudo
 
 
-- name: eliminar line
+- name: modificar
   lineinfile:
     path: "{{pathfichero}}/variablesmasteraworker.yaml"
-    regexp: 'salida_variable_kubeadm%'
-    state: absent
+    regexp: '^(.*)remplazar(.*)$'
+    line: variable_kubeadm
+    state: present
     backup: yes
   become: yes
   become_method: sudo
 
-- name: modificar linea
-  lineinfile:
-    path: "{{pathfichero}}/variablesmasteraworker.yaml"
-    line: "salida_variable_kubeadm: {{variable_kubeadm}}"
-  become: yes
-  become_method: sudo
+#- name: modificar linea
+  #lineinfile:
+   # path: "{{pathfichero}}/variablesmasteraworker.yaml"
+    #line: "salida_variable_kubeadm: {{variable_kubeadm}}"
+  #become: yes
+  #become_method: sudo
