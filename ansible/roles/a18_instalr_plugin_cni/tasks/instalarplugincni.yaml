@@ -8,15 +8,14 @@
   become_method: sudo
 
 
-- name: modificar
-  lineinfile:
+- name: modificar variable
+  replace:
     path: "{{pathfichero}}/variablesmasteraworker.yaml"
     regexp: 'remplazar'
-    line: variable_kubeadm
-    state: present
-    backup: yes
+    replace: variable_kubeadm
   become: yes
   become_method: sudo
+
 
 #- name: modificar linea
   #lineinfile:
