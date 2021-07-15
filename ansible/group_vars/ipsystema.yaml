@@ -3,4 +3,4 @@
 ipinet: 172.17.0.1/16
 ipworker: 192.168.0.111
 ipmaster_nfs: 192.168.0.110
-pathfichero: "/home/ansible/azure-xaso2/ansible/group_vars"
+pathfichero: "/home/ansible/azure-caso2/ansible/group_vars"
