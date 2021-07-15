@@ -1,0 +1,13 @@
+---
+
+#pruebas
+- name: modificar
+  lineinfile:
+    path: "{{pathfichero}}/variablesmasteraworker.yaml"
+    regexp: 'remplazar'
+    line: "variable_kubeadm"
+    state: present
+    backup: yes
+  become: yes
+  become_method: sudo
+
