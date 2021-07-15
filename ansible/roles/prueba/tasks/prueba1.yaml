@@ -2,12 +2,10 @@
 
 #pruebas
 - name: modificar
-  lineinfile:
+  replace:
     path: "{{pathfichero}}/variablesmasteraworker.yaml"
-    regexp: '^(.*)remplazar1(.*)$'
-    line: "variable_kubeadm"
-    state: present
-    backup: yes
+    regexp: 'remplazar1'
+    replace: "Linux"
   become: yes
   become_method: sudo
 
