@@ -12,9 +12,10 @@
   replace:
     path: "{{pathfichero}}/variablesmasteraworker.yaml"
     regexp: 'remplazar'
-    replace: variable_kubeadm
+    replace: variable_kubeadm.stdout
   become: yes
   become_method: sudo
+  when: variable_kubeadm.changed
 
 
 #- name: modificar linea
