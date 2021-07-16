@@ -32,18 +32,19 @@
   become_method: sudo
 
 #copiar configuracion kubeadmin
+#- name: Activar al root para ejecutar kubectl
+  #file:
+   # path: /home/kubeadmin/.kube/config
+   # owner: kubeadmin
+   # group: kubeadmin
+   # mode: 0755
+  #become: yes
+  #become_method: sudo
+
 - name: Activar al root para ejecutar kubectl
-  file:
-    path: /home/kubeadmin/.kube/config
-    owner: kubeadmin
-    group: kubeadmin
-    mode: 0755
+  command: sudo chown kubeadmin. /home/kubeadmin/.kube/config
   become: yes
   become_method: sudo
-
-  #command: sudo chown kubeadmin. /home/kubeadmin/.kube/config
-  #become: yes
- # become_method: sudo
 
 
 #- name: copiar configuracion kubeadminy  y cambiar owner
