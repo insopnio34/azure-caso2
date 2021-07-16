@@ -1,5 +1,0 @@
----
-
-# unir dos playbook para pasar variables
-  - import_playbook: 4_instalar_master.yaml
-  - import_playbook: 5_instalar_worker_parte1.yaml
