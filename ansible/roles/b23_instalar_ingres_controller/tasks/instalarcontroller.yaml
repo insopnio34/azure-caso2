@@ -2,7 +2,7 @@
 
 #instalar un ingress controller
 - name: Instalar un ingress controller
-  command: kubectl apply -f https://raw.githubusercontent.com/haproxytech/kubernetes-ingress/v1.5/deploy/haproxy-ingress.yaml
+  command: sudo kubectl apply -f https://raw.githubusercontent.com/haproxytech/kubernetes-ingress/v1.5/deploy/haproxy-ingress.yaml
   become: yes
   become_method: sudo
 
@@ -13,7 +13,7 @@
   become_method: sudo
 
 #crer namespace
-- name: ver los namespaces actiuales
+- name: ver los namespaces actuales
   command: kubectl get pods --namespace=haproxy-controller
   become: yes
   become_method: sudo

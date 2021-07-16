@@ -8,20 +8,8 @@
   become_method: sudo
  
 
-#- name: copy fechero
- # template:
-  #  src: variablesmasteraworker.yaml.j2
-   # dest: "{{pathfichero}}/variablesmasteraworker.yaml"
-    #owner: ansible
-    #group: ansible
-    #mode: 0644
-    #vars:
-     #   remplazar: {{variable_kubeadm.stdout}}
-  #become: yes
-  #become_method: sudo
 
-
-- name: modificar variable
+- name: Guardar variable para despues utilzarla
   replace:
    path: "{{pathfichero}}/variablesmasteraworker.yaml"
    regexp: "remplazar"
