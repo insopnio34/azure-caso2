@@ -4,13 +4,13 @@
     "\\ansible",
     "\\ansible\\group_vars",
     "\\ansible\\roles",
-    "\\ansible\\roles\\6_paquetes_nfs",
-    "\\ansible\\roles\\7_configurar_acceso_share_NFS\\tasks",
-    "\\ansible\\roles\\a11_activar_transparent_masquerading",
-    "\\ansible\\roles\\a11_activar_transparent_masquerading\\tasks",
-    "\\ansible\\roles\\a12_permitir_trafico",
-    "\\ansible\\roles\\a12_permitir_trafico\\tasks"
+    "\\ansible\\roles\\b21_abrir puertos_worker",
+    "\\ansible\\roles\\b21_abrir puertos_worker\\tasks",
+    "\\ansible\\roles\\b24_crear_usuario_admin_cluster",
+    "\\ansible\\roles\\prueba",
+    "\\ansible\\roles\\prueba\\tasks",
+    "\\terraform"
   ],
-  "SelectedNode": "\\ansible\\roles\\a18_instalr_plugin_cni\\tasks\\instalarplugincni.yaml",
+  "SelectedNode": "\\ansible\\group_vars\\variablesmasteraworker.yaml",
   "PreviewInSolutionExplorer": false
 }

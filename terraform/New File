@@ -1,0 +1,7 @@
+provider "azurerm" {
+features {}
+	subscription_id = "b37f1432-8e53-4981-9e9c-8c37d1078721"
+	client_id = "228ddc64-0bc9-46e4-b620-a12b8a7fc49a" # appID
+	client_secret = "BW56bQG5-R2d2GQBH2k3Jas7H4Og1Yb" # password
+	tenant_id = "476f4aea-4a06-4011-94e8-c24677f83422" # tenant
+}
