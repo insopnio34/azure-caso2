@@ -1,6 +1,6 @@
 #configuraciones para la maquina worker para el ingress controller
 - name: configurar maquina worker para ingress controller
-  hosts: worker
+  hosts: master
   gather_facts: false
   vars_files:
     - "group_vars/ipsystema.yaml"
