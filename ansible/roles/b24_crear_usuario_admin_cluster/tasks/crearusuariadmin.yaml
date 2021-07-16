@@ -38,6 +38,8 @@
     owner: kubeadmin
     group: kubeadmin
     mode: 0755
+  become: yes
+  become_method: sudo
 
   #command: sudo chown kubeadmin. /home/kubeadmin/.kube/config
   #become: yes
