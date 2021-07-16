@@ -1,8 +1,0 @@
-#configuraciones para las maquinas de master y worker
-- name: configurar maquinas master
-  hosts: master
-  gather_facts: false
-  vars_files:
-    - "group_vars/ipsystema.yaml"
-  roles:
-    - prueba
