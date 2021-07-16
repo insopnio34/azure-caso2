@@ -1,0 +1,17 @@
+---
+
+#instalar imagen de docker un
+- name: Instalar imagen de jenkins
+  command: docker pull jenkins/jenkins:lts-jdk11
+  register: tarea_completada
+  become: yes
+  become_method: sudo
+
+
+#Ejecutar imagen de jenkins
+- name: Ejecutar imagen de jenkins
+  command: docker run -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts-jdk11
+  register: levantar el docker
+  become: yes
+  become_method: sudo
+
