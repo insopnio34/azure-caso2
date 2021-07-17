@@ -8,6 +8,11 @@
   become_method: sudo
  
 
+- name: contar
+  debug:
+        numlineas: (variable_kubeadm.stdout | b64decode).splitlines() | length
+
+
 - name: Obtener el comando a ejecutar 
   set_fact:
    #error_lines: "{{ variable_kubeadm.results | to_json | from_json | json_query(\"[].stdout_lines[?contains(@, 'kubeadm')][]\")  }}"
