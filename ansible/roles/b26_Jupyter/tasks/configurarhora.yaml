@@ -1,8 +1,0 @@
----
-
-# configuramos la zona horaria
-- name: congifurar hora
-  timezone:
-    name: Europe/Madrid
-  become: yes
-  become_method: sudo

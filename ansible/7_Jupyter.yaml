@@ -1,6 +1,0 @@
-#Jupyter
-- name: instalar jupter
-  hosts: worker
-  gather_facts: false
-  roles:
-    - b26_Jupyter
