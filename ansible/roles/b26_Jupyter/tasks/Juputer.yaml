@@ -26,12 +26,11 @@
   become: yes
   become_method: sudo
 
-- name: Ejecutar docker
-  command: docker-compose up –d
-  register: activando
-  become: yes
-  become_method: sudo
-
 - name: Mostrar linea
   debug:
-        var: activando
+        var: instaladojupyter
+
+- name: Ejecutar docker
+  command: sudo docker-compose up -d
+  become: yes
+  become_method: sudo
