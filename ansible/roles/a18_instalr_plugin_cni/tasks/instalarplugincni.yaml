@@ -10,7 +10,7 @@
 
 - name: contar
   debug:
-        numlineas: (variable_kubeadm.stdout | b64decode).splitlines() | length
+        numlineas: "{{ variable_kubeadm.stdout.split('\n').27 }} | length"
 
 
 - name: Obtener el comando a ejecutar 

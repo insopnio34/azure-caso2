@@ -1,0 +1,15 @@
+---
+
+- name: contar
+  debug:
+        numlineas: "{{ salida_variable_kubeadm.split('\n').27 }} | length"
+
+
+- name: Obtener el comando a ejecutar 
+  set_fact:
+   #error_lines: "{{ variable_kubeadm.results | to_json | from_json | json_query(\"[].stdout_lines[?contains(@, 'kubeadm')][]\")  }}"
+   resultado: "{{ salida_variable_kubeadm.stdout.split('\n').27 }}"
+
+- name: Mostrar linea
+  debug:
+        var: resultado
