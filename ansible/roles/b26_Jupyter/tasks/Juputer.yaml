@@ -14,10 +14,6 @@
   become: yes
   become_method: sudo
 
-- name: ir a ejecutardoker compose
-  command: chdir=/home/ansible/azure-caso2/ ls
-  become: yes
-  become_method: sudo
 
 - name: Instalar Jupyter
   command: 'git clone https://github.com/JuanLuisGozaloFdez/DevOpsLab4-jupyter'
@@ -29,3 +25,13 @@
   command: chdir=./DevOpsLab4-jupyter ls
   become: yes
   become_method: sudo
+
+- name: Ejecutar contenedor
+  command: 'docker-compose up –d'
+  register: resultado
+  become: yes
+  become_method: sudo
+
+- name: Mostrar linea  de token
+  debug:
+        var: resultado
