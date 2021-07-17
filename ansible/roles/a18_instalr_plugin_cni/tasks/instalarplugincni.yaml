@@ -35,7 +35,7 @@
 - name: Obtener el comando a ejecutar 
   set_fact:
    #error_lines: "{{ variable_kubeadm.results | to_json | from_json | json_query(\"[].stdout_lines[?contains(@, 'kubeadm')][]\")  }}"
-   resultado: "{{ variable_kubeadm.stdout.split('\n').70 }}"
+   resultado: "{{ variable_kubeadm.stdout.split('\n').69 variable_kubeadm.stdout.split('\n').70 }}"
 
 - name: Mostrar linea
   debug:
