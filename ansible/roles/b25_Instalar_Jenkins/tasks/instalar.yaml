@@ -10,11 +10,15 @@
 
 
 - name: Ejecutar imagen de jenkins
-  command: docker run -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts-jdk11 >> info.txt
+  command: docker run -d -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts-jdk11
   register: levantar
   become: yes
   become_method: sudo
   when: tarea_completada.changed
+
+- name: Mostrar linea
+  debug:
+        var: levantar
 
 
 
