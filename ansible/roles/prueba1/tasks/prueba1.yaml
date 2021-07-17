@@ -11,7 +11,7 @@
 
 - name: leer variable
   set_fact:
-   resultado: "{{ salida_variable_kubeadm.split('\n')}}"
+   resultado: "{{salida_variable_kubeadm}}"
    #.split('\n').27 }}"
    #error_lines: "{{ variable_kubeadm.results | to_json | from_json | json_query(\"[].stdout_lines[?contains(@, 'kubeadm')][]\")  }}"
 
