@@ -14,6 +14,11 @@
   become: yes
   become_method: sudo
 
+- name: ir a ejecutardoker compose
+  command: chdir=/home/ansible/azure-caso2/ ls
+  become: yes
+  become_method: sudo
+
 - name: Instalar Jupyter
   command: 'git clone https://github.com/JuanLuisGozaloFdez/DevOpsLab4-jupyter'
   register: instaladojupyter
