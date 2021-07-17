@@ -1,0 +1,24 @@
+---
+
+#instalar imagen de docker un
+- name: Instalar imagen de jenkins
+  command: kubectl apply -f files/instalarJenkins.yaml
+  register: tarea_completada
+  become: yes
+  become_method: sudo
+
+
+#ver pots instalado
+- name: Instalar imagen de jenkins
+  command:  kubectl get pods --namespace=default
+  register: pots_instalado
+  become: yes
+  become_method: sudo
+
+- name: contar
+  debug:
+        var: pots_instalado
+
+
+
+ 

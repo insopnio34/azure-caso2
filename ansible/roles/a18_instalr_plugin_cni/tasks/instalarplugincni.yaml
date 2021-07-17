@@ -8,7 +8,7 @@
   become_method: sudo
  
 
-#mostramso la linea del comando resultante y la guardamos
+#mostramos la linea del comando resultante y la guardamos
 
 - name: Mostrar linea 1 comando
   set_fact:
@@ -23,7 +23,7 @@
   debug:
         var: var3
 
-
+#unimos las dos ultimas lineas para tener el comando resultante
 - name: Obtener el comando a ejecutar 
   set_fact:
    resultado: "{{ variable_kubeadm.stdout.split('\n').69}}{{variable_kubeadm.stdout.split('\n').70 }}"
