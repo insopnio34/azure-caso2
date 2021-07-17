@@ -26,12 +26,12 @@
   become: yes
   become_method: sudo
 
-- name: Ejecutar contenedor
-  command: 'docker-compose up –d'
-  register: resultado
+- name: Ejecutar docker
+  command: docker-compose up –d
+  register: activando
   become: yes
   become_method: sudo
 
-- name: Mostrar linea  de token
+- name: Mostrar linea
   debug:
-        var: resultado
+        var: activando
