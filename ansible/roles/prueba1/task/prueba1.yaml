@@ -1,14 +1,21 @@
 ---
 
-- name: contar
-  debug:
-        numlineas: "{{ salida_variable_kubeadm.split('\n').27 }} | length"
-
+- name: abrir firewall  6443/tcp
+  firewalld:
+    port: 6443/tcp
+    permanent: true
+    state: enabled
+  become: yes
+  become_method: sudo
 
 - name: Obtener el comando a ejecutar 
   set_fact:
    #error_lines: "{{ variable_kubeadm.results | to_json | from_json | json_query(\"[].stdout_lines[?contains(@, 'kubeadm')][]\")  }}"
    resultado: "{{ salida_variable_kubeadm.stdout.split('\n').27 }}"
+
+- name: contar
+  debug:
+        numlineas: "{{ salida_variable_kubeadm.split('\n').27 }} | length"
 
 - name: Mostrar linea
   debug:
