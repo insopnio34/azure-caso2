@@ -1,6 +1,6 @@
 #Jupyter
 - name: instalar jupter
-  hosts: 
+  hosts: worker
   gather_facts: false
   roles:
     - b25_Instalar_Jupyter
