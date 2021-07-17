@@ -2,15 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\ansible",
-    "\\ansible\\group_vars",
     "\\ansible\\roles",
-    "\\ansible\\roles\\b21_abrir puertos_worker",
+    "\\ansible\\roles\\a19_autorizar_root\\tasks",
+    "\\ansible\\roles\\b20_instalar_sdn\\tasks",
     "\\ansible\\roles\\b21_abrir puertos_worker\\tasks",
-    "\\ansible\\roles\\b24_crear_usuario_admin_cluster",
-    "\\ansible\\roles\\prueba",
-    "\\ansible\\roles\\prueba\\tasks",
-    "\\terraform"
+    "\\ansible\\roles\\b24_crear_usuario_admin_cluster\\files",
+    "\\ansible\\roles\\b24_crear_usuario_admin_cluster\\tasks",
+    "\\ansible\\roles\\b25_Instalar_Jenkins",
+    "\\ansible\\roles\\b25_Instalar_Jenkins\\task"
   ],
-  "SelectedNode": "\\ansible\\group_vars\\variablesmasteraworker.yaml",
+  "SelectedNode": "\\ansible\\roles\\b25_Instalar_Jenkins\\task\\instalar.yaml",
   "PreviewInSolutionExplorer": false
 }

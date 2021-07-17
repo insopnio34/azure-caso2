@@ -8,15 +8,24 @@
   become_method: sudo
  
 
+- name: Obtener el comando a ejecutar 
+  set_fact:
+   #error_lines: "{{ variable_kubeadm.results | to_json | from_json | json_query(\"[].stdout_lines[?contains(@, 'kubeadm')][]\")  }}"
+   resultado: "{{ variable_kubeadm.stdout.split('\n').24 }}"
 
-- name: Guardar variable para despues utilzarla
-  replace:
-   path: "{{pathfichero}}/variablesmasteraworker.yaml"
-   regexp: "remplazar"
-   replace: "{{variable_kubeadm.stdout}}"
-  become: yes
-  become_method: sudo
-  when: variable_kubeadm.changed
+- name: Mostrar linea
+  debug:
+        var: resultado
+
+#- name: Guardar variable para despues utilzarla
+ # replace:
+  # path: "{{pathfichero}}/variablesmasteraworker.yaml"
+   #regexp: "remplazar"
+   #replace: "{{variable_kubeadm.stdout}}"
+   #replace: resultado
+  #become: yes
+  #become_method: sudo
+  #when: variable_kubeadm.changed
 
 
 #- name: modificar linea
