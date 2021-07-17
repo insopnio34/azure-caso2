@@ -11,13 +11,15 @@
 
 - name: leer variable
   set_fact:
-   resultado: "{{salida_variable_kubeadm}}"
+   resultado: "{{ salida_variable_kubeadm.split('\n')}}"
    #.split('\n').27 }}"
    #error_lines: "{{ variable_kubeadm.results | to_json | from_json | json_query(\"[].stdout_lines[?contains(@, 'kubeadm')][]\")  }}"
-- name: contar
-  debug:
-        numlineas: "{{ resultado.split('\n') }} | length"
 
 - name: Mostrar linea
   debug:
-        var: resultado
+        var2: {{ resultado.split('\n') }} 
+
+- name: contar
+  debug:
+        numlineas: var2 | length
+
