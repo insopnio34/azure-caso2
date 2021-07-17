@@ -17,9 +17,9 @@
 
 - name: Mostrar linea
   debug:
-        var2: resultado.splitlines() | length
+        var2: "{{resultado.split('\n')}}"
 
 - name: contar
   debug:
-        numlineas: var2 | length
+        numlineas: "{{ var2 |length }}" 
 
