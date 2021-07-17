@@ -19,7 +19,12 @@
   set_fact:
    var2: "{{resultado.split('\n')}}"
 
+
+- name: Mostrar linea
+  set_fact:
+    var3: "{{var2 | length }}"
+
 - name: contar
   debug:
-        numlineas: var2 | length 
+        var: var3
 
