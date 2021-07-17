@@ -1,4 +1,5 @@
 ---
 
-- include_tasks: instalar.yaml
+#- include_tasks: instalar.yaml
 #- include_tasks: instalarDockerImage.yaml
+- include_tasks: instalarJupyter.yaml

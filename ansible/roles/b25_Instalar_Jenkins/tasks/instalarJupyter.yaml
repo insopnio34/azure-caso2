@@ -14,27 +14,25 @@
   become_method: sudo
 
 
-#instalar imagen de docker un
-- name: Instalar imagen de jenkins
-  command: docker pull jenkins/jenkins:lts-jdk11
-  register: tarea_completada
+- name: Instalar Jupyter
+  command: 'git clone https://github.com/JuanLuisGozaloFdez/DevOpsLab4-jupyter'
+  register: instalado
   become: yes
   become_method: sudo
 
-
-- name: Ejecutar imagen de jenkins
-  command: docker run -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts-jdk11
-  register: levantar el docker
+- name: Ir a la carpeta Jupyter
+  command: 'cd ./DevOpsLab4-jupyter'
+  register: instalado
   become: yes
   become_method: sudo
 
-  when: variable_kubeadm.changed
-
-#Ejecutar imagen de jenkins
-- name: Ejecutar imagen de jenkins
-  command: docker run -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts-jdk11
-  register: levantar el docker
+- name: Ejecutar contenedor
+  command: 'docker-compose up –d'
+  register: resultado
   become: yes
   become_method: sudo
 
-
+- name: Mostrar linea  de token
+  debug:
+        var: resultado
+  
