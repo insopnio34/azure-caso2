@@ -19,3 +19,8 @@
   register: instaladojupyter
   become: yes
   become_method: sudo
+
+- name: ir a ejecutardoker compose
+  command: chdir=./DevOpsLab4-jupyter ls
+  become: yes
+  become_method: sudo
