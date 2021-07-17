@@ -8,8 +8,8 @@
     - a16_configurar_firewall_kubernetes
     - a17_permitir_acces_contenedores
     - a18_instalr_plugin_cni
-    #- a19_autorizar_root
-    #- b20_instalar_sdn
+    - a19_autorizar_root
+    - b20_instalar_sdn
 
 
 
