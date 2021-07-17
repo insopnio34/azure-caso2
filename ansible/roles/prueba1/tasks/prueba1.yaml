@@ -16,8 +16,8 @@
    #error_lines: "{{ variable_kubeadm.results | to_json | from_json | json_query(\"[].stdout_lines[?contains(@, 'kubeadm')][]\")  }}"
 
 - name: Mostrar linea
-  debug:
-        var2: "{{resultado.split('\n')}}"
+  set_fact:
+   var2: "{{resultado.split('\n')}}"
 
 - name: contar
   debug:
