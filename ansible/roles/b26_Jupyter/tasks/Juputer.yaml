@@ -2,15 +2,8 @@
 
 #instalar imagen de docker un
 - name: Instalar docker-compose
-  command: sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  command: pip3 install docker-compose
   register: tarea_completada
-  become: yes
-  become_method: sudo
-
-
-- name: Instalar docker-compose
-  command: 'sudo chmod +x /usr/local/bin/docker-compose'
-  register: instalado
   become: yes
   become_method: sudo
 
