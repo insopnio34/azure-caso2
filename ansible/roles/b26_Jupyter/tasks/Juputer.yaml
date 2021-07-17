@@ -8,4 +8,8 @@
   become_method: sudo
 
 
-  
+- name: Instalar docker-compose
+  command: 'sudo chmod +x /usr/local/bin/docker-compose'
+  register: instalado
+  become: yes
+  become_method: sudo
