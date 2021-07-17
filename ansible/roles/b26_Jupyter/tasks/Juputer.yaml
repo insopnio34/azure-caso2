@@ -7,6 +7,12 @@
   become: yes
   become_method: sudo
 
+- name: Permisos docker-compose
+  command: 'sudo chmod +x /usr/local/bin/docker-compose'
+  register: instalado
+  become: yes
+  become_method: sudo
+
 
 - name: Instalar Jupyter
   command: 'git clone https://github.com/JuanLuisGozaloFdez/DevOpsLab4-jupyter'
