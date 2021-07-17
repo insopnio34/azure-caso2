@@ -31,7 +31,7 @@
         var: instaladojupyter
 
 - name: Ejecutar docker
-  command: /usr/bin/docker-compose up -d >> salida.txt
+  command: docker-compose up -d >> salida.txt
   register: salida
   become: yes
   become_method: sudo
