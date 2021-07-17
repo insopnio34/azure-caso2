@@ -7,9 +7,18 @@
   become: yes
   become_method: sudo
 
-- name: Permisos docker-compose
-  command: 'sudo chmod +x /usr/local/bin/docker-compose'
-  register: instalado
+#- name: Permisos docker-compose
+ # command: 'sudo chmod +x /usr/local/bin/docker-compose'
+  #register: instalado
+  #become: yes
+  #become_method: sudo
+
+- name:  Permisos
+  file:
+    path: /usr/local/bin/docker-compose
+    owner: "{{ansible_user | default(ansible_user_id) }}"
+    group: "{{ansible_user | default(ansible_user_id) }}"
+    mode: 0755
   become: yes
   become_method: sudo
 
