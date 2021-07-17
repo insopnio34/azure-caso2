@@ -17,7 +17,7 @@
 
 - name: Mostrar linea
   debug:
-        var2: {{ resultado.split('\n') }} 
+        var2: resultado.split('\n')
 
 - name: contar
   debug:
