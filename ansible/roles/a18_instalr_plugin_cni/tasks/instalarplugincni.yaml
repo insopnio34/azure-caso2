@@ -7,21 +7,6 @@
   become: yes
   become_method: sudo
  
-
-- name: contar
-  debug:
-        numlineas: "{{ variable_kubeadm.stdout.split('\n').27 }} | length"
-
-
-- name: Obtener el comando a ejecutar 
-  set_fact:
-   #error_lines: "{{ variable_kubeadm.results | to_json | from_json | json_query(\"[].stdout_lines[?contains(@, 'kubeadm')][]\")  }}"
-   resultado: "{{ variable_kubeadm.stdout.split('\n').27 }}"
-
-- name: Mostrar linea
-  debug:
-        var: resultado
-
 - name: Guardar variable para despues utilzarla
   replace:
    path: "{{pathfichero}}/variablesmasteraworker.yaml"
@@ -31,6 +16,32 @@
   become: yes
   become_method: sudo
   when: variable_kubeadm.changed
+
+
+- name: Mostrar linea
+  set_fact:
+   var2: "{{variable_kubeadm.stdout.split('\n')}}"
+
+
+- name: Mostrar linea
+  set_fact:
+    var3: "{{var2 | length }}"
+
+- name: contar
+  debug:
+        var: var3
+
+
+- name: Obtener el comando a ejecutar 
+  set_fact:
+   #error_lines: "{{ variable_kubeadm.results | to_json | from_json | json_query(\"[].stdout_lines[?contains(@, 'kubeadm')][]\")  }}"
+   resultado: "{{ variable_kubeadm.stdout.split('\n').var3 }}"
+
+- name: Mostrar linea
+  debug:
+        var: resultado
+
+
 
 
 #- name: modificar linea
