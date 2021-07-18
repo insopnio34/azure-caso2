@@ -22,11 +22,13 @@ resource "azurerm_network_security_group" "lpsc_SecGroup" {
     }
 }
 
-# hacemos la relacion con el grupo de seguridad y la interface de red
+# hacemos la relacion con el grupo de seguridad y la interface de red del NIC 1
 resource "azurerm_network_interface_security_group_association" "lpsc_SecGroupAssociation1" {
     network_interface_id      = azurerm_network_interface.lpsc_Nic1.id
     network_security_group_id = azurerm_network_security_group.lpsc_SecGroup.id
 }
+
+# hacemos la relacion con el grupo de seguridad y la interface de red del NIC 2
 resource "azurerm_network_interface_security_group_association" "lpsc_SecGroupAssociation2" {
     network_interface_id      = azurerm_network_interface.lpsc_Nic2.id
     network_security_group_id = azurerm_network_security_group.lpsc_SecGroup.id

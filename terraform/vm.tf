@@ -1,7 +1,6 @@
 
   
-# Creamos una máquina virtual
-# https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/linux_virtual_machine
+# Creamos las dos maquinas virtuales
 
 resource "azurerm_linux_virtual_machine" "lpsc_VM1" {
     name                = "lpsc-azure-vm1"

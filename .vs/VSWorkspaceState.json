@@ -1,10 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\ansible",
-    "\\ansible\\roles\\b25_Instalar_Jenkins",
-    "\\terraform"
+    "\\ansible\\roles\\1_sincronizacion_horaria\\tasks"
   ],
-  "SelectedNode": "\\terraform\\correcion-vars.tf",
+  "SelectedNode": "\\.gitignore",
   "PreviewInSolutionExplorer": false
 }

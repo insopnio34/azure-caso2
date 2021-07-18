@@ -29,7 +29,7 @@
 
 
 
-#iniciar y activar chrony
+#iniciar y activar chrony daba fallo al ejecutarlo de esta forma
 #- name: iniciar y activar chrony
 #  systemd:
  #   name: chrony

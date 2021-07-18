@@ -19,7 +19,7 @@ resource "azurerm_subnet" "lpsc_Subnet" {
 
 }
 
-# Creacion del NIC 1
+# Creacion del NIC 1 para la primera maquina
 
 resource "azurerm_network_interface" "lpsc_Nic1" {
   name                = "vmnica_lpsc"  
@@ -40,6 +40,8 @@ resource "azurerm_network_interface" "lpsc_Nic1" {
 
 }
 
+# Creacion del NIC 2 para la segunda maquina
+
 resource "azurerm_network_interface" "lpsc_Nic2" {
   name                = "vmnicb_lpsc"  
   location            = azurerm_resource_group.rg.location
@@ -59,7 +61,7 @@ resource "azurerm_network_interface" "lpsc_Nic2" {
 
 }
 
-# Definicion de IP pública
+# Definicion de IP pública 1
 resource "azurerm_public_ip" "lpsc_PublicIp1" {
   name                = "vmip1_lpsc"
   location            = azurerm_resource_group.rg.location
@@ -74,7 +76,7 @@ resource "azurerm_public_ip" "lpsc_PublicIp1" {
 }
 
 
-# Definición de IP publica
+# Definición de IP publica 2
 resource "azurerm_public_ip" "lpsc_PublicIp2" {
   name                = "vmip2_lpsc"
   location            = azurerm_resource_group.rg.location

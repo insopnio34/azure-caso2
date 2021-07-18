@@ -1,4 +1,4 @@
 ---
 
-
+#la variable remplazar se modifica con el comando que produce kubectl
 salida_variable_kubeadm: "remplazar"

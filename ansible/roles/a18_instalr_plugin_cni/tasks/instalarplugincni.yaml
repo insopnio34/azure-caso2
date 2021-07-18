@@ -44,9 +44,3 @@
   when: variable_kubeadm.changed
 
 
-#- name: modificar linea
-  #lineinfile:
-   # path: "{{pathfichero}}/variablesmasteraworker.yaml"
-    #line: "salida_variable_kubeadm: {{variable_kubeadm}}"
-  #become: yes
-  #become_method: sudo

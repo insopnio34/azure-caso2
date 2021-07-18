@@ -1,5 +1,6 @@
 ---
-
+#definimoc los nombres de los discos que poseemos en el sistema y como se va a llamar el volumen que utilizaremos dentro del despliegue
+#de kubernetes
 disco: sdb
 rutavolumen: /dev/sdb
 rutavolumenlogico: /dev/sdb1

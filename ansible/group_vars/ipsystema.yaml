@@ -1,5 +1,5 @@
 ---
-
+#definicion de ip y path de ficheros utilizados para la ejecucion de  los playbooks
 ipinet: 172.17.0.1/16
 ipworker: 192.168.0.111
 ipmaster_nfs: 192.168.0.110
