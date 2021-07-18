@@ -22,7 +22,7 @@ resource "azurerm_subnet" "lpsc_Subnet" {
 # Creacion del NIC 1
 
 resource "azurerm_network_interface" "lpsc_Nic1" {
-  name                = "vmnic1_lpsc"  
+  name                = "vmnica_lpsc"  
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
 
@@ -30,7 +30,7 @@ resource "azurerm_network_interface" "lpsc_Nic1" {
     name                           = "lpsc_ipconfiguration1"
     subnet_id                      = azurerm_subnet.lpsc_Subnet.id 
     private_ip_address_allocation  = "Static"
-    private_ip_address             = "192.168.0.110"
+    private_ip_address             = "192.168.1.110"
     public_ip_address_id           = azurerm_public_ip.lpsc_PublicIp1.id
   }
 
@@ -41,7 +41,7 @@ resource "azurerm_network_interface" "lpsc_Nic1" {
 }
 
 resource "azurerm_network_interface" "lpsc_Nic2" {
-  name                = "vmnic1_lpsc"  
+  name                = "vmnicb_lpsc"  
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
 
@@ -49,7 +49,7 @@ resource "azurerm_network_interface" "lpsc_Nic2" {
     name                           = "lpsc_ipconfiguration1"
     subnet_id                      = azurerm_subnet.lpsc_Subnet.id 
     private_ip_address_allocation  = "Static"
-    private_ip_address             = "192.168.0.111"
+    private_ip_address             = "192.168.1.111"
     public_ip_address_id           = azurerm_public_ip.lpsc_PublicIp2.id
   }
 
