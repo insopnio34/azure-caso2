@@ -2,15 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\ansible",
+    "\\ansible\\group_vars",
     "\\ansible\\roles",
-    "\\ansible\\roles\\a19_autorizar_root\\tasks",
-    "\\ansible\\roles\\b20_instalar_sdn\\tasks",
-    "\\ansible\\roles\\b21_abrir puertos_worker\\tasks",
-    "\\ansible\\roles\\b24_crear_usuario_admin_cluster\\files",
-    "\\ansible\\roles\\b24_crear_usuario_admin_cluster\\tasks",
-    "\\ansible\\roles\\b25_Instalar_Jenkins",
-    "\\ansible\\roles\\b25_Instalar_Jenkins\\task"
+    "\\ansible\\roles\\2_desinstalar_SELinux\\tasks",
+    "\\ansible\\roles\\3_instalar_nfs_utils\\tasks",
+    "\\ansible\\roles\\4_identificar_crear_volumen\\tasks",
+    "\\ansible\\roles\\a12_permitir_trafico\\tasks",
+    "\\ansible\\roles\\b23_instalar_ingres_controller\\tasks",
+    "\\ansible\\roles\\b25_Instalar_Jenkins"
   ],
-  "SelectedNode": "\\ansible\\roles\\b25_Instalar_Jenkins\\task\\instalar.yaml",
+  "SelectedNode": "\\ansible\\5_instalar_worker_parte1.yaml",
   "PreviewInSolutionExplorer": false
 }
