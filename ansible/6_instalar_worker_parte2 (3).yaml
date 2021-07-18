@@ -1,9 +1,0 @@
-#configuraciones para la maquina worker para el ingress controller
-- name: configurar maquina worker para ingress controller
-  hosts: master
-  gather_facts: false
-  vars_files:
-    - "group_vars/usuarios.yaml"
-  roles:
-    - b23_instalar_ingres_controller
-    - b24_crear_usuario_admin_cluster
