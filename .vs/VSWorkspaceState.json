@@ -2,15 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\ansible",
-    "\\ansible\\group_vars",
-    "\\ansible\\roles",
-    "\\ansible\\roles\\2_desinstalar_SELinux\\tasks",
-    "\\ansible\\roles\\3_instalar_nfs_utils\\tasks",
-    "\\ansible\\roles\\4_identificar_crear_volumen\\tasks",
-    "\\ansible\\roles\\a12_permitir_trafico\\tasks",
-    "\\ansible\\roles\\b23_instalar_ingres_controller\\tasks",
-    "\\ansible\\roles\\b25_Instalar_Jenkins"
+    "\\ansible\\roles\\b25_Instalar_Jenkins",
+    "\\terraform"
   ],
-  "SelectedNode": "\\ansible\\5_instalar_worker_parte1.yaml",
+  "SelectedNode": "\\terraform\\correcion-vars.tf",
   "PreviewInSolutionExplorer": false
 }
