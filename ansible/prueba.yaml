@@ -1,9 +1,0 @@
-
-#configuraciones para las maquinas de master y worker
-- name: pruebas lineas
-  hosts: master
-  gather_facts: false
-  vars_files:
-    - "group_vars/variablesmaster.yaml"
-  roles:
-    - prueba1
