@@ -1,5 +1,4 @@
 # regitramos el terraform
-
 terraform {
   required_providers {
     azurerm = {
@@ -9,19 +8,9 @@ terraform {
   }
 }
 
-# Datos para autenticarnos en el sistema de Azure
-provider "azurerm" {
-  features {}
-  subscription_id = credentials.subscription_id
-  client_id = credentials.client_id # appID
-  client_secret = credentials.client_secret # password
-  tenant_id = credentials.tenant_id # tenant
-}
-
 # recurso de azure que utilizaremos
-
 resource "azurerm_resource_group" "rg" {
-    name     =  "lpsc-grupo"
+    name     =  var.grupo_recursos
     location = var.localizacion
     tags = {
         environment = "CP2"
@@ -30,7 +19,7 @@ resource "azurerm_resource_group" "rg" {
 }
 
 # Cuenta de almacenamiento
-resource "azurerm_storage_account" "stAccount" {
+resource "azurerm_storage_account" "stAc" {
     name                     = var.storage_account
     resource_group_name      = azurerm_resource_group.rg.name
     location                 = azurerm_resource_group.rg.location
@@ -42,3 +31,6 @@ resource "azurerm_storage_account" "stAccount" {
     }
 
 }
+
+
+

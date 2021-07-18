@@ -1,30 +1,12 @@
-#variable para configurar la localizacion donde tendremos los recursos
-variable "localizacion" {
-  type = string
-  description = "Región de Azure donde crearemos la infraestructura"
-  default = "West Europe"
-}
-
 variable "vm_tamanyo" {
   type = string
-  description = "Tamaño de la máquina virtual"
+  description = "Tamano de la maquina virtual"
   default = "Standard_B2s" # - 2 vcpu, 4 GiB de memoria 
 }
 
-variable "storage_account" {
+variable "grupo_recursos" {
 	type = string
-	description = "Nombre para la storage account"
-    default = "almacenamientolpsc"
+	description = "grupo de recursos"
+    default = "lpsc-grupo_vm"
 }
 
-variable "public_key_path" {
-  type = string
-  description = "Ruta para la clave pública de acceso a las instancias"
-  default = "~/.ssh/id_rsa.pub" # o la ruta correspondiente
-}
-
-variable "ssh_user" {
-	type = string
-	description = "Usuario para hacer ssh"
-    default = "<SSH USER>"
-}
